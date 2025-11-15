@@ -31,16 +31,24 @@
               arceo: { navy: "#0F2741", gold: "#F0B429", blue: "#12395B" }
             }
           },
-        },   }
-          },
         },
         },
       };
     </script>
 
     <style>
-      /* Accent palette inspired b.accent { color: #F0B429 !important; } .accen.pill { border-color: #D6DEE8 !important; background: #F4F8FF !important; }DEE8; b.divider { background: #D6DEE8 !important; }der { background: #D6DEE8; }
-      /* Gold ca.gold-box { background: #F0B429 !important; border-color: #D9A114 !important; color: #0F2741 !important; } body { background: linear-gradient(180deg, #Fbody { background: linear-gradient(180deg, #F7FAFF 0%, #FFFFFF 45%); }e !important; }
+      /* Accent palette inspired by arceoconsult.com */
+      .accent { color: #F0B429 !important; }
+      .pill { border-color: #D6DEE8 !important; background: #F4F8FF !important; }
+      .divider { background: #D6DEE8 !important; }
+      /* Gold cards for highlights */
+      .gold-box { background: #F0B429 !important; border-color: #D9A114 !important; color: #0F2741 !important; }
+      /* Soft blue-white background */
+      body { background: linear-gradient(180deg, #0F2741 0%, #12395B 35%, #FFFFFF 100%); }
+
+      @media print {
+        .no-print { display: none !important; }
+        .shadow-sm, .shadow { box-shadow: none !important; }
         body { color: #111827; background: #FFFFFF !important; }
         @page { size: A4; margin: 10mm; }
         * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -61,7 +69,7 @@
     </header>
 
     <!-- Page -->
-    <main class="mx-auto max-w-4xl px-4 py-6">
+    <main class="mx-auto max-w-4xl px-4 py-6 bg-white/95 rounded-2xl shadow-sm">
       <!-- Header -->
       <section class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5">
         <div>
@@ -168,4 +176,3 @@
     </main>
   </body>
 </html>
-
