@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Leo Celija — One-Pager</title>
+    <title>Leo Celija  -  One-Pager</title>
 
     <!-- Meta / Sharing -->
     <meta name="description" content="Sales acceleration, investor liquidity, and sales coaching in the Nordics." />
     <link rel="canonical" href="https://quantico-leo.github.io/arceo-onepager/" />
-    <meta property="og:title" content="Leo Celija — One-Pager" />
+    <meta property="og:title" content="Leo Celija  -  One-Pager" />
     <meta property="og:description" content="Sales acceleration, investor liquidity, and sales coaching in the Nordics." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://quantico-leo.github.io/arceo-onepager/" />
@@ -44,20 +44,34 @@
       /* Gold cards for highlights */
       .gold-box { background: #F0B429 !important; border-color: #D9A114 !important; color: #0F2741 !important; }
       /* Soft blue-white background */
-      body { background: linear-gradient(180deg, #0F2741 0%, #12395B 35%, #FFFFFF 100%); }
+      body { background: #FFFFFF; }
 
-      @media print {
-        .no-print { display: none !important; }
+      @media print { .no-print { display: none !important; } .shadow-sm, .shadow { box-shadow: none !important; } @page { size: A4; margin: 8mm; } body { color: #111827; background: #FFFFFF !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 12px; } main { padding: 0 !important; transform: scale(0.96); transform-origin: top left; width: 104.17%; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } section { margin-bottom: 10px !important; } .page-bg{display:block !important;} } .shadow-sm, .shadow { box-shadow: none !important; } body { color: #111827; background: #FFFFFF !important; } @page { size: A4; margin: 10mm; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } .page-bg{display:block !important;} }
         .shadow-sm, .shadow { box-shadow: none !important; }
         body { color: #111827; background: #FFFFFF !important; }
         @page { size: A4; margin: 10mm; }
         * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         section, .rounded-2xl, .rounded-xl { break-inside: avoid; }
       }
+    .page-bg{position:fixed; inset:0; z-index:-1;}
+      .page-bg svg{width:100%; height:100%; display:block;}
+
     </style>
   </head>
-
   <body class="bg-white text-neutral-900 antialiased font-sans">
+    <!-- Printable blue→white background layer -->
+    <div class="page-bg" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0F2741"/>
+            <stop offset="35%" stop-color="#12395B"/>
+            <stop offset="100%" stop-color="#FFFFFF"/>
+          </linearGradient>
+        </defs>
+        <rect width="100" height="100" fill="url(#bgGrad)"/>
+      </svg>
+    </div>
     <!-- Top bar (hidden on print) -->
     <header class="sticky top-0 z-30 border-b border-neutral-200 bg-white/90 backdrop-blur no-print">
       <div class="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
@@ -74,7 +88,7 @@
       <section class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5">
         <div>
           <h1 class="text-3xl md:text-[34px] font-semibold tracking-tight text-arceo-navy">Leo Celija</h1>
-          <p class="mt-1 text-[12px] text-neutral-600">Managing Director / Co‑Founder — Sales Acceleration • Investor Liquidity • Sales Coaching (Nordics)</p>
+          <p class="mt-1 text-[12px] text-neutral-600">Managing Director / Co‑Founder  -  Sales Acceleration • Investor Liquidity • Sales Coaching (Nordics)</p>
         </div>
         <div class="text-[12px] text-neutral-700 flex flex-col md:items-end">
           <div class="flex items-center gap-1">
@@ -100,7 +114,7 @@
       <section class="grid md:grid-cols-3 gap-4 mb-5">
         <div>
           <h2 class="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-1">Who</h2>
-          <p class="text-[14px] leading-6">Operator‑consultant and rainmaker. I help SME leaders create order, unlock cash, and win deals fast — quietly, precisely, and hands‑on.</p>
+          <p class="text-[14px] leading-6">Operator‑consultant and rainmaker. I help SME leaders create order, unlock cash, and win deals fast  -  quietly, precisely, and hands‑on.</p>
         </div>
         <div>
           <h2 class="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-1">What</h2>
