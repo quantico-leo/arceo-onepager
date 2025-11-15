@@ -40,13 +40,18 @@
       .accent { color: #F0B429; }
       .pill { border-color: #E6ECF2; background: #F8FAFC; }
       .divider { background: #E6ECF2; }
+      /* Gold cards for highlights */
+      .gold-box { background: #F0B429; border-color: #E9C878; color: #0F2741; }
+      /* Soft blue-white background */
+      body { background: linear-gradient(180deg, #FFFFFF 0%, #F6F9FF 100%); }
 
-      @media print { .no-print { display: none !important; } .shadow-sm, .shadow { box-shadow: none !important; } body { color: #111827; } @page { size: A4; margin: 10mm; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } }
+      @media print {
+        .no-print { display: none !important; }
         .shadow-sm, .shadow { box-shadow: none !important; }
-        body { color: #111827; }
-        @page { size: A4; margin: 14mm; }
+        body { color: #111827; background: #FFFFFF !important; }
+        @page { size: A4; margin: 10mm; }
         * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-        section, .rounded-2xl { break-inside: avoid; }
+        section, .rounded-2xl, .rounded-xl { break-inside: avoid; }
       }
     </style>
   </head>
@@ -71,7 +76,17 @@
           <p class="mt-1 text-[12px] text-neutral-600">Managing Director / Co‑Founder — Sales Acceleration • Investor Liquidity • Sales Coaching (Nordics)</p>
         </div>
         <div class="text-[12px] text-neutral-700 flex flex-col md:items-end">
-          <div class="flex items-center gap-1"><span>📞</span> <a href="tel:+46737846011" class="hover:underline">+46 737 846011</a></div>
+          <div class="flex items-center gap-1">
+            <span>📞</span>
+            <a href="tel:+46737846011" class="hover:underline">+46 737 846011</a>
+            <a href="https://wa.me/46737846011" class="ml-2" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12 .5C5.9.5.9 5.5.9 11.6c0 2 .5 3.9 1.6 5.6L.5 23.5l6.5-1.9c1.6.9 3.3 1.3 5.1 1.3 6.1 0 11.1-5 11.1-11.1C23.2 5.5 18.1.5 12 .5zm0 20.1c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.8 1.1 1.1-3.7-.2-.3c-.8-1.3-1.2-2.8-1.2-4.4 0-4.7 3.9-8.6 8.6-8.6s8.6 3.9 8.6 8.6-3.9 8.7-8.4 8.7zm4.8-6c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.3-1.5-1.5-1.7-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.3s1 2.7 1.1 2.8c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3 0-.1-.2-.1-.5-.2z"/></svg>
+            </a>
+          </div>
+          <div class="flex items-center gap-1"><span>✉️</span> <a href="mailto:leo.celija@gmail.com" class="hover:underline">leo.celija@gmail.com</a></div>
+          <a class="hover:underline" href="https://linkedin.com/in/leocelija">linkedin.com/in/leocelija</a>
+          <div class="text-neutral-500">Gothenburg, Sweden</div>
+        </div>
           <div class="flex items-center gap-1"><span>✉️</span> <a href="mailto:leo.celija@gmail.com" class="hover:underline">leo.celija@gmail.com</a></div>
           <a class="hover:underline" href="https://linkedin.com/in/leocelija">linkedin.com/in/leocelija</a>
           <div class="text-neutral-500">Gothenburg, Sweden</div>
@@ -117,7 +132,11 @@
       <section class="mb-4">
         <h2 class="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-1">Highlights</h2>
         <div class="grid md:grid-cols-2 gap-3 text-[13px] leading-6">
-          <div class="rounded-xl border border-neutral-200 p-3">61 cases • 85% liquidity recovery (2022–2025)</div>
+          <div class="rounded-xl border gold-box p-3">61 cases • 85% liquidity recovery (2022–2025)</div>
+          <div class="rounded-xl border gold-box p-3">SEK 1.8M in 7 months via productised offers + partners</div>
+          <div class="rounded-xl border gold-box p-3">Guardian Model™: KPI lift inside two weeks</div>
+          <div class="rounded-xl border gold-box p-3">External agent engine generating qualified pipeline EU/Nordics</div>
+        </div>
           <div class="rounded-xl border border-neutral-200 p-3">SEK 1.8M in 7 months via productised offers + partners</div>
           <div class="rounded-xl border border-neutral-200 p-3">Guardian Model™: KPI lift inside two weeks</div>
           <div class="rounded-xl border border-neutral-200 p-3">External agent engine generating qualified pipeline EU/Nordics</div>
@@ -152,7 +171,6 @@
       <!-- Footer -->
       <footer class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-[11px] text-neutral-500">
         <div>Based in Gothenburg • Operating Nordics • Immediate availability</div>
-        <div>Prepared <script>document.write(new Date().toLocaleDateString())</script></div>
       </footer>
     </main>
   </body>
