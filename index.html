@@ -46,7 +46,22 @@
       /* Soft blue-white background */
       body { background: #FFFFFF; }
 
-      @media print { .no-print { display: none !important; } .shadow-sm, .shadow { box-shadow: none !important; } @page { size: A4; margin: 8mm; } body { color: #111827; background: #FFFFFF !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 12px; } main { padding: 0 !important; transform: scale(0.96); transform-origin: top left; width: 104.17%; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } section { margin-bottom: 10px !important; } .page-bg{display:block !important;} } .shadow-sm, .shadow { box-shadow: none !important; } body { color: #111827; background: #FFFFFF !important; } @page { size: A4; margin: 10mm; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } .page-bg{display:block !important;} }
+      @media print {
+  .no-print { display: none !important; }
+  .shadow-sm, .shadow { box-shadow: none !important; }
+  @page { size: A4; margin: 8mm; }
+  body {
+    color: #111827;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    background: linear-gradient(180deg, #0F2741 0%, #12395B 35%, #FFFFFF 100%) !important;
+    font-size: 12px;
+  }
+  /* Hide SVG layer to prevent blank first page */
+  .page-bg { display: none !important; }
+  main { padding: 0 !important; transform: scale(0.955); transform-origin: top left; width: 104.7%; background: transparent !important; box-shadow: none !important; }
+  section, .rounded-2xl, .rounded-xl { break-inside: avoid; }
+  section { margin-bottom: 8px !important; }
+} .shadow-sm, .shadow { box-shadow: none !important; } @page { size: A4; margin: 8mm; } body { color: #111827; background: #FFFFFF !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 12px; } main { padding: 0 !important; transform: scale(0.96); transform-origin: top left; width: 104.17%; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } section { margin-bottom: 10px !important; } .page-bg{display:block !important;} } .shadow-sm, .shadow { box-shadow: none !important; } body { color: #111827; background: #FFFFFF !important; } @page { size: A4; margin: 10mm; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } .page-bg{display:block !important;} }
         .shadow-sm, .shadow { box-shadow: none !important; }
         body { color: #111827; background: #FFFFFF !important; }
         @page { size: A4; margin: 10mm; }
