@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
@@ -42,12 +42,24 @@
       .pill { border-color: #D6DEE8 !important; background: #F4F8FF !important; }
       .divider { background: #D6DEE8 !important; }
       /* Gold cards for highlights */
-      .gold-box { background: #F0B429 !important; border-color: #D9A114 !important; color: #0F2741 !important; }
+      .gold-box { background: #F0B429 !important; border-color: #D9A114 !important; color: #0F2741 !important; margin-top: 6px; margin-bottom: 6px; }
       /* Soft blue-white background */
       body { background: #FFFFFF; }
 
       @media print {
   .no-print { display: none !important; }
+  .shadow-sm, .shadow { box-shadow: none !important; }
+  @page { size: A4; margin: 12mm; }
+  body {
+    color: #111827;
+    background: #F4F8FF !important;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    font-size: 12px;
+  }
+  main { padding: 0 !important; background: transparent !important; }
+  section, .rounded-2xl, .rounded-xl { break-inside: avoid; }
+  section { margin-bottom: 10px !important; }
+}
   .shadow-sm, .shadow { box-shadow: none !important; }
   @page { size: A4; margin: 12mm; }
   body {
@@ -80,10 +92,10 @@
   main { padding: 0 !important; transform: scale(0.955); transform-origin: top left; width: 104.7%; background: transparent !important; box-shadow: none !important; }
   section, .rounded-2xl, .rounded-xl { break-inside: avoid; }
   section { margin-bottom: 8px !important; }
-} .shadow-sm, .shadow { box-shadow: none !important; } @page { size: A4; margin: 8mm; } body { color: #111827; background: #FFFFFF !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 12px; } main { padding: 0 !important; transform: scale(0.96); transform-origin: top left; width: 104.17%; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } section { margin-bottom: 10px !important; } @media screen { body{background: #F4F8FF;} } }
+} .shadow-sm, .shadow { box-shadow: none !important; } @page { size: A4; margin: 8mm; } body { color: #111827; background: #FFFFFF !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 12px; } main { padding: 0 !important; transform: scale(0.96); transform-origin: top left; width: 104.17%; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } section { margin-bottom: 10px !important; } @media screen { body{background: #F4F8FF;} } } }
       </style>
   </head>
-  <body class="bg-white text-neutral-900 antialiased font-sans">
+  <body class="bg-[#F4F8FF] text-neutral-900 antialiased font-sans">
     <!-- Printable blue→white background layer -->
     
     <!-- Top bar (hidden on print) -->
@@ -97,7 +109,7 @@
     </header>
 
     <!-- Page -->
-    <main class="mx-auto max-w-4xl px-4 py-6 bg-white/95 rounded-2xl shadow-sm">
+    <main class="mx-auto max-w-4xl px-4 py-6">
       <!-- Header -->
       <section class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5">
         <div>
