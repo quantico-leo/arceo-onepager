@@ -50,6 +50,13 @@
   .no-print { display: none !important; }
   .shadow-sm, .shadow { box-shadow: none !important; }
   @page { size: A4; margin: 8mm; }
+  body { color: #111827; background: #FFFFFF !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 12px; }
+  main { padding: 0 !important; transform: scale(0.955); transform-origin: top left; width: 104.7%; background: transparent !important; }
+  section, .rounded-2xl, .rounded-xl { break-inside: avoid; }
+  section { margin-bottom: 8px !important; }
+}
+  .shadow-sm, .shadow { box-shadow: none !important; }
+  @page { size: A4; margin: 8mm; }
   body {
     color: #111827;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
@@ -61,32 +68,12 @@
   main { padding: 0 !important; transform: scale(0.955); transform-origin: top left; width: 104.7%; background: transparent !important; box-shadow: none !important; }
   section, .rounded-2xl, .rounded-xl { break-inside: avoid; }
   section { margin-bottom: 8px !important; }
-} .shadow-sm, .shadow { box-shadow: none !important; } @page { size: A4; margin: 8mm; } body { color: #111827; background: #FFFFFF !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 12px; } main { padding: 0 !important; transform: scale(0.96); transform-origin: top left; width: 104.17%; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } section { margin-bottom: 10px !important; } .page-bg{display:block !important;} } .shadow-sm, .shadow { box-shadow: none !important; } body { color: #111827; background: #FFFFFF !important; } @page { size: A4; margin: 10mm; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } .page-bg{display:block !important;} }
-        .shadow-sm, .shadow { box-shadow: none !important; }
-        body { color: #111827; background: #FFFFFF !important; }
-        @page { size: A4; margin: 10mm; }
-        * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-        section, .rounded-2xl, .rounded-xl { break-inside: avoid; }
-      }
-    .page-bg{position:fixed; inset:0; z-index:-1;}
-      .page-bg svg{width:100%; height:100%; display:block;}
-
-    </style>
+} .shadow-sm, .shadow { box-shadow: none !important; } @page { size: A4; margin: 8mm; } body { color: #111827; background: #FFFFFF !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 12px; } main { padding: 0 !important; transform: scale(0.96); transform-origin: top left; width: 104.17%; } section, .rounded-2xl, .rounded-xl { break-inside: avoid; } section { margin-bottom: 10px !important; } @media screen { body{background: linear-gradient(180deg, #0F2741 0%, #12395B 35%, #FFFFFF 100%);} }
+      </style>
   </head>
   <body class="bg-white text-neutral-900 antialiased font-sans">
     <!-- Printable blue→white background layer -->
-    <div class="page-bg" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
-        <defs>
-          <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#0F2741"/>
-            <stop offset="35%" stop-color="#12395B"/>
-            <stop offset="100%" stop-color="#FFFFFF"/>
-          </linearGradient>
-        </defs>
-        <rect width="100" height="100" fill="url(#bgGrad)"/>
-      </svg>
-    </div>
+    
     <!-- Top bar (hidden on print) -->
     <header class="sticky top-0 z-30 border-b border-neutral-200 bg-white/90 backdrop-blur no-print">
       <div class="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
