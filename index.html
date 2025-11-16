@@ -11,7 +11,7 @@
     <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Tailwind CDN (cache‑busted) -->
     <script src="https://cdn.tailwindcss.com?v=2"></script>
@@ -32,29 +32,66 @@
       .divider { background:#D6DEE8; }
       .pill { border-color:#D6DEE8; background:#F4F8FF; }
       .gold-box { background:#F0B429 !important; border:1px solid #D9A114 !important; color:#0F2741 !important; border-radius:14px; padding:12px; }
+
+      /* ===== PRINT: force single A4 page ===== */
       @media print {
         .no-print { display:none !important; }
-        @page { size:A4; margin:12mm; }
-        body { background:#F4F8FF !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-        section, .gold-box { break-inside: avoid; }
+        @page { size:A4; margin:10mm; }
+        html, body { background:#F4F8FF !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+        section, .gold-box { break-inside: avoid; page-break-inside: avoid; }
+
+        /* Global compaction */
+        body { font-size:11px; line-height:1.35; }
+        h1 { font-size:24px !important; line-height:1.2 !important; letter-spacing:-0.01em; }
+        h2 { font-size:10px !important; letter-spacing:0.2em !important; }
+        p, li { font-size:11px !important; line-height:1.35 !important; }
+
+        /* Downsize arbitrary Tailwind font utilities */
+        .text-\[14px\]{ font-size:12px !important; }
+        .text-\[13px\]{ font-size:11.5px !important; }
+        .text-\[12px\]{ font-size:11px !important; }
+        .text-\[11px\]{ font-size:10.5px !important; }
+        .md\:text-\[34px\]{ font-size:24px !important; }
+        .text-sm{ font-size:10.5px !important; }
+
+        /* Tighten vertical rhythm */
+        .mb-6{ margin-bottom:12px !important; }
+        .mb-5{ margin-bottom:10px !important; }
+        .mb-4{ margin-bottom:8px !important; }
+        .mt-4{ margin-top:8px !important; }
+        .mt-1{ margin-top:4px !important; }
+        .space-y-3 > :not([hidden]) ~ :not([hidden]){ --tw-space-y-reverse:0; margin-top:6px !important; }
+
+        /* Tighten grids/gaps */
+        .gap-6{ gap:10px !important; }
+        .gap-4{ gap:8px !important; }
+
+        /* Ensure links are clickable and visible */
+        a{ color:#0F2741 !important; text-decoration:underline !important; }
       }
+
+      /* Make LinkedIn link visually clear even on screen (and guaranteed anchor for PDF) */
+      .linkedin-link{ font-weight:600; text-decoration:underline; text-underline-offset:2px; }
     </style>
   </head>
   <body class="text-neutral-900 antialiased font-sans">
-    <!-- Top bar -->
+    <!-- Top bar (screen only) -->
     <header class="sticky top-0 z-30 border-b border-neutral-200 bg-white/80 backdrop-blur no-print">
       <div class="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
         <div class="text-[11px] tracking-widestx uppercase text-neutral-500">ARCEOCONSULT • ONE‑PAGER CV</div>
-        <button onclick="window.print()" class="rounded-2xl border border-neutral-300 px-3 py-1.5 text-sm">Export PDF</button>
+        <div class="flex items-center gap-2">
+          <a href="#contact" class="rounded-2xl border border-neutral-300 px-3 py-1.5 text-sm">Contact</a>
+          <button onclick="window.print()" class="rounded-2xl border border-neutral-300 px-3 py-1.5 text-sm">Export PDF</button>
+        </div>
       </div>
     </header>
 
     <main class="mx-auto max-w-4xl px-4 py-6">
       <!-- Header -->
-      <section class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5">
+      <section class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5" id="contact">
         <div>
           <h1 class="text-3xl md:text-[34px] font-semibold tracking-tight text-arceo-navy">Leo Celija</h1>
-          <p class="mt-1 text-[12px] text-neutral-600">Managing Director / Co‑Founder - Sales Acceleration • Investor Liquidity • Sales Coaching (Nordics)</p>
+          <p class="mt-1 text-[12px] text-neutral-600">Managing Director / Co‑Founder — Sales Acceleration • Investor Liquidity • Sales Coaching (Nordics)</p>
         </div>
         <div class="text-[12px] text-neutral-700 flex flex-col md:items-end">
           <div class="flex items-center gap-1"><span>📞</span><a href="tel:+46737846011" class="hover:underline">+46 737 846011</a>
@@ -62,7 +99,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12 .5C5.9.5.9 5.5.9 11.6c0 2 .5 3.9 1.6 5.6L.5 23.5l6.5-1.9c1.6.9 3.3 1.3 5.1 1.3 6.1 0 11.1-5 11.1-11.1C23.2 5.5 18.1.5 12 .5zm0 20.1c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.8 1.1 1.1-3.7-.2-.3c-.8-1.3-1.2-2.8-1.2-4.4 0-4.7 3.9-8.6 8.6-8.6s8.6 3.9 8.6 8.6-3.9 8.7-8.4 8.7zm4.8-6c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.3-1.5-1.5-1.7-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.3s1 2.7 1.1 2.8c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3 0-.1-.2-.1-.5-.2z"/></svg>
             </a></div>
           <div class="flex items-center gap-1"><span>✉️</span> <a href="mailto:leo.celija@gmail.com" class="hover:underline">leo.celija@gmail.com</a></div>
-          <a class="hover:underline" href="https://linkedin.com/in/leocelija">linkedin.com/in/leocelija</a>
+          <!-- Use a direct <a> so it's clickable in the exported PDF -->
+          <a class="linkedin-link" href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener">linkedin.com/in/leocelija</a>
           <div class="text-neutral-500">Gothenburg, Sweden</div>
         </div>
       </section>
@@ -78,9 +116,9 @@
         <div>
           <h2 class="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-1">Highlights</h2>
           <div class="grid md:grid-cols-1 gap-4 text-[13px] leading-6">
-            <div class="gold-box">61 cases • 85% liquidity recovery (2022–2025)</div>
-            <div class="gold-box">SEK 1.8M in 7 months via productised offers + partners</div>
-            <div class="gold-box">Guardian Model™: KPI lift inside two weeks</div>
+            <div class="gold-box font-semibold">61 cases • 85% liquidity recovery (2022–2025)</div>
+            <div class="gold-box font-semibold">SEK 1.8M in 7 months via productised offers + partners</div>
+            <div class="gold-box font-semibold">Guardian Model™: KPI lift inside two weeks</div>
           </div>
         </div>
       </section>
@@ -90,19 +128,19 @@
         <h2 class="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-1">Experience</h2>
         <div class="space-y-3 text-[14px] leading-6">
           <div>
-            <div class="font-medium">Founder & Managing Partner - ArceoConsult | 2025–Present</div>
-            <p>Guardian boutique for SMEs - 48h diagnostic, 30–60d reset; productised offers; partner sales engine; measurable liquidity and sales KPIs.</p>
+            <div class="font-extrabold">Founder & Managing Partner — ArceoConsult | 2025–Present</div>
+            <p>Guardian boutique for SMEs — 48h diagnostic, 30–60d reset; productised offers; partner sales engine; measurable liquidity and sales KPIs.</p>
           </div>
           <div>
-            <div class="font-medium">Founder & CEO - SweInvest Finance AB | 2022–Present</div>
-            <p>Capital recovery & secondaries - VHF Method™ with 85% success (61 cases); SEK 1.8M in 7 months; EU partner network; 70/30 recovery structure.</p>
+            <div class="font-extrabold">Founder & CEO — SweInvest Finance AB | 2022–Present</div>
+            <p>Capital recovery & secondaries — VHF Method™ with 85% success (61 cases); SEK 1.8M in 7 months; EU partner network; 70/30 recovery structure.</p>
           </div>
           <div>
-            <div class="font-medium">Corporate Manager - Göteborg Energi AB | 2018–2020</div>
+            <div class="font-extrabold">Corporate Manager — Göteborg Energi AB | 2018–2020</div>
             <p>Key‑account leadership within renewable energy portfolios.</p>
           </div>
           <div>
-            <div class="font-medium">Sales/Advisory - UCB • Fisher Investments • Skandia | 2010–2018</div>
+            <div class="font-extrabold">Sales/Advisory — UCB • Fisher Investments • Skandia | 2010–2018</div>
             <p>B2B expansion, HNWI wealth strategies, and regulated advisory foundations.</p>
           </div>
         </div>
@@ -120,7 +158,7 @@
         </div>
         <div>
           <h2 class="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-1">Education</h2>
-          <p class="text-[13px] leading-6">MSc Political Science (with Economics) - University of Gothenburg</p>
+          <p class="text-[13px] leading-6">MSc Political Science (with Economics) — University of Gothenburg</p>
         </div>
         <div>
           <h2 class="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-1">Languages</h2>
